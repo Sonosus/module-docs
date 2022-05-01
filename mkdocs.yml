@@ -6,5 +6,6 @@ repo_name: 'sonosus/module-docs'
 repo_url: 'https://github.com/sonosus/module-docs'
 nav:
     - Home: index.md
+    - Modules: modules.md
 theme:
   name: 'material'
