@@ -9,7 +9,10 @@ nav:
     - Modules: modules.md
 theme:
   name: 'material'
+  features:
+      - navigation.tracking
 markdown_extensions:
     - toc:
         permalink: "%"
+        permalink: True
 
