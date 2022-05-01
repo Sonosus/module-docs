@@ -1,40 +1,9 @@
-## Sample
+## Module Docs
 
-One more, finally. Or not? :
+## Introduction
 
-Now:
+On this site I aim to collate all of the documentation for my synth-DIY related ventures into one cohesive, usable package. This process will take some time as I transfer, edit, and improve the documentation from my existing repositories which are not all equally documented, leading to much confusion.
 
-```
-$ some 
-```
-
-Look what she said:
-
-> This is it!
-
-### Subtitle
-
-And now this:
-
-- One
-- Two
-- Three
+Much of this site will be a work in progress until otherwise stated - please do contact me if you have any questions. You can either email sonosusoshwa [at] gmail [dot] com or PM me on the Look Mum No Computer Discourse forum - [link](lookmumnocomputer.discourse.group/u/sonosus).
 
 
-#### As well
-
-#### As this
-
-### Another
-
-[a link](https://aws.com)
-
-More?
-
-
-Can we now have `the build`?
-
-NOW!
-
-
-Not gonna work, is it?

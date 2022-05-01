@@ -1,3 +1,3 @@
-# Example MkDocs deploy GitHub Action
+# Sonosus's Module Documentation
 
-This is a template that uses the  [MkDocs deploy](https://github.com/marketplace/actions/deploy-mkdocs) GitHub action
+Documentation for my synth-DIY adventures. View at docs.sonosus.me.

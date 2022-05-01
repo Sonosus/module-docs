@@ -1,9 +1,9 @@
-site_name: Test docs
+site_name: Sonosus's Synth DIY site
 site_description: 'A docs test'
-site_author: 'Michael Hausenblas'
+site_author: 'Sonosus'
 docs_dir: docs/
-repo_name: 'mhausenblas/mkdocs-template'
-repo_url: 'https://github.com/mhausenblas/mkdocs-template'
+repo_name: 'sonosus/module-docs'
+repo_url: 'https://github.com/sonosus/module-docs'
 nav:
     - Home: index.md
 theme:
