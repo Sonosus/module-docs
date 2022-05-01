@@ -11,8 +11,16 @@ theme:
   name: 'material'
   features:
       - navigation.tracking
+      - toc.integrate
+      - navigation.tabs
+      - navigation.tabs.sticky
+      - navigation.expand
 markdown_extensions:
     - toc:
         permalink: "%"
         permalink: True
+extra:
+    social:
+      - icon: fontawesome/brands/github
+        link: https://github.com/sonosus
 
