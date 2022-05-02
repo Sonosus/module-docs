@@ -16,6 +16,12 @@ The spread value is determined by adding together the value of the Spread knob (
  | Power draw | ? |
  | Experience | Beginner |
 
+ | Method      | Description                          |
+| ----------- | ------------------------------------ |
+| `GET`       | :material-check:     Fetch resource  |
+| `PUT`       | :material-check-all: Update resource |
+| `DELETE`    | :material-close:     Delete resource |
+
 - Images
 # Design
 - Description of circuit
