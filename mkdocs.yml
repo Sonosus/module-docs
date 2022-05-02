@@ -14,8 +14,6 @@ theme:
   features:
       - navigation.tracking
       - toc.integrate
-      - navigation.tabs
-      - navigation.tabs.sticky
       - navigation.expand
 markdown_extensions:
     - toc:
