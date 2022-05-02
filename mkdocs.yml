@@ -6,8 +6,9 @@ repo_name: 'sonosus/module-docs'
 repo_url: 'https://github.com/sonosus/module-docs'
 nav:
     - Home: index.md
-    - Modules: modules.md
-      - Kosmic Mutator: vcdo.md
+    - 'Modules':
+      - 'Kosmic Mutator': 'vcdo.md'
+      - 'Kosmic Superspreader': 'spreader.md'
 theme:
   name: 'material'
   features:
