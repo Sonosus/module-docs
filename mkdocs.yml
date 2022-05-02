@@ -1,5 +1,5 @@
-site_name: Sonosus's Synth DIY site
-site_description: 'A docs test'
+site_name: Sonosus's Synth DIY documentation
+site_description: 'Documentation for my synth-DIY modules and projects.'
 site_author: 'Sonosus'
 docs_dir: docs/
 repo_name: 'sonosus/module-docs'
@@ -23,4 +23,6 @@ extra:
     social:
       - icon: fontawesome/brands/github
         link: https://github.com/sonosus
-
+    analytics:
+      provider: google
+      property: G-7KP96YZFCX
