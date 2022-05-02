@@ -19,6 +19,7 @@ markdown_extensions:
     - toc:
         permalink: "%"
         permalink: True
+    - tables
 extra:
     social:
       - icon: fontawesome/brands/github

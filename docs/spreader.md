@@ -9,11 +9,11 @@ It takes a CV input. A 'spread' value is then:
 The CV input is also buffered and sent to the Buffer output.
 
 The spread value is determined by adding together the value of the Spread knob (ranging from 0 to 12V) and the value of the Spread CV input (attenuated by the CV ATT knob).
-
-| Size | 5cm |
-| Cost | £15 |
-| Power draw | ? |
-| Experience | Beginner |
+ | --- | ---
+ | Size | 5cm |
+ | Cost | £15 |
+ | Power draw | ? |
+ | Experience | Beginner |
 
 - Images
 # Design
