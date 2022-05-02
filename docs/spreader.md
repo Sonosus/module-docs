@@ -12,9 +12,8 @@ The spread value is determined by adding together the value of the Spread knob (
  | _ | _ |
 
 
- |      |                          |
-| ----------- | ------------------------------------ |
-| Width     | 5cm  |
+ 
+ | Width     | 5cm  |
 | Cost       | ~£15 |
 | Power draw    | ? |
 
