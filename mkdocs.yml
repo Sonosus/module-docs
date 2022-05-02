@@ -15,6 +15,9 @@ theme:
       - navigation.tracking
       - toc.integrate
       - navigation.expand
+  palette:
+    - accent: orange
+    - primary: red
 markdown_extensions:
     - toc:
         permalink: "%"
