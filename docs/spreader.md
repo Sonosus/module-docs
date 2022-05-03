@@ -48,7 +48,7 @@ Other components you will require for a full build:
 The latest PCB/panel Gerber files are available on [GitHub](github.com/sonosus/kosmicsuperspreader/releases/latest) for download.
 I may also have some PCBs available for you to purchase for a competitive price (less than £7-8). If you are interested in buying a board set, please contact me.
 
-## Resistor Matching
+### Resistor Matching
 For accurate 1v/oct tracking, it is desirable to match certain sets of resistors as closely as your ohmmeter allows. These are:
 
 - R4, R5, R10
@@ -56,12 +56,16 @@ For accurate 1v/oct tracking, it is desirable to match certain sets of resistors
 - R6, R8
 - R7, R9
 
-## Building
-### Main board
+
+## Main board
 As always, start with the smallest components on the board and work your way upwards. Populate the matched resistors first then install the remaining resistors. Solder down the IC sockets and capacitors. Ensure the polarity of C1 and C2 is correct. The ceramic capacitors have no polarity.
 
-### Panel
+## Panel and switchgear
+### Pots
 Insert the potentiometers RV1 and RV2 into the board without soldering them down. Offer up the panel to the PCB and screw the nut onto the potentiometers to affix them to the panel. Assert that the PCB is parallel to the panel and the fastening nut on the pots is tightened then solder the pots onto the PCB.
+### Jacks
+Insert the jack sockets into their corresponding holes in the panel. Tighten the nut to clamp them down. 
+
 
 
 
