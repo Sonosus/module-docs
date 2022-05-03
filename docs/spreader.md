@@ -64,7 +64,21 @@ As always, start with the smallest components on the board and work your way upw
 ### Pots
 Insert the potentiometers RV1 and RV2 into the board without soldering them down. Offer up the panel to the PCB and screw the nut onto the potentiometers to affix them to the panel. Assert that the PCB is parallel to the panel and the fastening nut on the pots is tightened then solder the pots onto the PCB.
 ### Jacks
-Insert the jack sockets into their corresponding holes in the panel. Tighten the nut to clamp them down. 
+Insert the jack sockets into their corresponding holes in the panel. Tighten their fastening nuts to hold them to the panel. 
+
+### Wiring
+
+The square pads on the PCB are for the signal connection and the round pads are connected to ground. Solder a length of stranded wire from one of the round pads on the board to the ground pin on any of the jack sockets. The ground plane on the panel will tie together the sleeves on the jacks, only requiring one ground wire to be used.
+
+Solder wires from the square pins on the board to the tip of the corresponding jack socket:
+
+- + on PCB to + jack
+- - on PCB to - jack
+- SPREAD on PCB to CV jack
+- IN on PCB to IN jack
+- BUFFER on PCB to BUFFER jack.
+
+
 
 
 
