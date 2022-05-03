@@ -20,14 +20,45 @@ The spread value is determined by adding together the value of the Spread knob (
 
 - Images
 # Design
-- Description of circuit
-- Full explanation of circuit
-- Schematic
 
+The circuit is based around a single TL074 op amp. 
+
+The spread value is determined by summing the voltages from the wipers of RV1 and RV2 through an inverting summing amplifier (U2A). 
+The input CV is summed with the spread value through another inverting summing amplifier(U2B) which is then inverted a second time with a unity gain inverting amplifier (U2C) to get the - output of the module.
+The spread value is subtracted from the input CV (remember the input CV is inverted) through a unity gain differential amplifier to get the + output of the module. 
+To make the buffer output, the input CV is fed through a voltage follower (U1A) whose output is connected ot the buffer jack.
+
+Schematic
+![images/spreader-sch-01.jpg](images/spreader-sch-01.jpg)
 # Building
 - BOM ( Component specific advice (matching, tempco)), IC SOCKEtS!
-- PCB availability, Gerbers
-- General overview/component type
+The bill of materials is shown below.
+
+Note: the capacitors are optional but recommended to ensure module stability.
+Other components you will require for a full module:
+
+- 2 IC sockets (DIP8 and DIP14, highly recommended)
+- 1 panel
+- 1 PCB
+- 2 knobs (any will do, I 3D print them)
+- 1 Kosmo power cable
+- 4 wood/machine screws for mounting the module in your case
+
+The latest PCB/panel Gerber files are available on [GitHub](github.com/sonosus/kosmicsuperspreader/releases/latest) for download.
+I may also have some PCBs available for you to purchase for a competitive price (less than £7-8). If you are interested in buying a board set, please contact me.
+
+For accurate 1v/oct tracking, it is desirable to match certain sets of resistors as closely as your ohmmeter allows. These are:
+- R4, R5, R10
+- R11, R12
+- R6, R8
+- R7, R9
+
+As always, start with the smallest components on the board and work your way upwards. Populate the matched resistors first then install the remaining resistors. Solder down the IC sockets and capacitors. Ensure the polarity of C1 and C2 is correct. The ceramic capacitors have no polarity.
+
+Insert the potentiometers RV1 and RV2 into the board without soldering them down. Offer up the panel to the PCB and screw the nut onto the potentiometers to affix them to the panel. Assert that the PCB is parallel to the panel and the fastening nut on the pots is tightened then solder the pots onto the PCB.
+
+
+
 - Panel wiring
 - PCB mistakes/modifications
 - PCB renderings
