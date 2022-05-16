@@ -72,8 +72,8 @@ The square pads on the PCB are for the signal connection and the round pads are 
 
 Solder wires from the square pins on the board to the tip of the corresponding jack socket:
 
-- + on PCB to + jack
-- - on PCB to - jack
+-  + on PCB to + jack
+-  - on PCB to - jack
 - SPREAD on PCB to CV jack
 - IN on PCB to IN jack
 - BUFFER on PCB to BUFFER jack.
