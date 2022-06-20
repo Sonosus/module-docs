@@ -26,10 +26,8 @@ The circuit is based around the popular CEM3340 voltage controlled oscillator ch
 ![images/3340breakout-sch-01.jpg](images/3340breakout-sch-01.jpg)
 
 # Building
-<details>
 
-<summary>Bill of Materials</summary>
-
+### Bill of Materials
 
     
 20/06/2022 20:58:12
@@ -66,7 +64,7 @@ Generated from schematic by Eeschema (6.0.0)
 | U1 | 1 | TL074 | Quad operational amplifier | A-1138 |
 | U3 | 1 | AS3340 | (CEM/AS/V)3340 chip |  |
 
-<details>
+
 
 - PCB availability, Gerbers
 - General overview/component type
