@@ -9,6 +9,7 @@ nav:
     - 'Modules':
       - 'Kosmic Mutator': 'vcdo.md'
       - 'Kosmic Superspreader': 'spreader.md'
+      - '3340 VCO Breakout': '3340breakout.md'
 theme:
   name: 'material'
   features:

@@ -2,6 +2,7 @@
 
 This is a small form factor VCO board. It is designed to be modular so it is possible to add or remove certain functions to build a customized module.
 It is based around the popular CEM3340 chip. In its fully populated configuration, it has the following features:
+
 - Ramp, triangle, and square waveform outputs.
 - Voltage controlled pulse width modulation for the square waveform output.
 - 1 volt per octave control voltage input.
