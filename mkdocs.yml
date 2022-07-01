@@ -19,11 +19,19 @@ theme:
   palette:
     - accent: orange
     - primary: red
+  icon:
+    admonition:
+      info: octicons/info-16
 markdown_extensions:
     - toc:
         permalink: "%"
         permalink: True
     - tables
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - admonition
+    - pymdownx.details
 extra:
     social:
       - icon: fontawesome/brands/github

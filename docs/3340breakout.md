@@ -30,44 +30,66 @@ The circuit is based around the popular CEM3340 voltage controlled oscillator ch
 
 ### Bill of Materials
 
-    
-20/06/2022 20:58:12
+A BoM is shown below.
+ <details>
+  <summary>Bill of Materials</summary>   
 
-Generated from schematic by Eeschema (6.0.0)
 
-**Component Count:** 45
+Notes:
 
-| Refs | Qty | Component | Description | Tayda SKU |
-| ----- | --- | ---- | ----------- | ---- |
-| C1, C2, C3, C5, C12 | 5 | 100nf | Ceramic capacitor | A-553 |
-| C4 | 1 | 1nf | Ceramic capacitor | A-965 |
-| C6 | 1 | 1nf | High quality box capacitor | A-1531 |
-| C7 | 1 | 10nf | Ceramic capacitor | A-962 |
-| C8, C9 | 2 | 10uf | Polarised electrolytic capacitor | A-4554 |
-| H1, H2, H3, H4, H5, H6, H7 | 7 | 6.35mm jack | Audio jack | A-1121 |
-| J1 | 1 | POWER INPUT | 2x5 pin box header | A-2939 |
-| R1, R22 | 2 | 1M | Resistor | A-2277 |
-| R2, R9 | 2 | 470R | Resistor | A-2247 |
-| R3 | 1 | 24K | Resistor | A-2771 |
-| R4 | 1 | 1M5 | Resistor | A-2783 |
-| R5 | 1 | 5K6 | Resistor | A-2351 |
-| R6, R7 | 2 | FERRITE |  |  |
-| R8 | 1 | 680R | Resistor | A-2281 |
-| R10 | 1 | 1.8k | Resistor | A-2340 |
-| R11 | 1 | 10k/47k | Resistor (See docs) | A-2279 |
-| R12 | 1 | 1K | Resistor | A-2200 |
-| R13, R14, R15 | 3 | 470k | Resistor | A-2180 |
-| R16, R18, R19 | 3 | 100K | Resistor | A-2248 |
-| R17 | 1 | 4k7 | Resistor | A-2310 |
-| RV1 | 1 | 10k TRACK | Bourns 3296W trimmer(1v/oct tracking) | A-586 |
-| RV2, RV3, RV4 | 3 | 100k | Potentiometer(Frequency) |  |
-| RV6 | 1 | 20k  | Bourns 3296W trimmer (HF tracking) | A-592 |
-| U1 | 1 | TL074 | Quad operational amplifier | A-1138 |
-| U3 | 1 | AS3340 | (CEM/AS/V)3340 chip |  |
+- R6/R7 can be either ferrite beads, 1N5817 diodes, or 10 ohm resistors. If using diodes, ensure the cathode (end with the stripe) is in the hole nearest the + on the silkscreen.
+
+- C8/C9 are optional but recommended to ensure power stability is maintained.
+
+- R11 should be 10k if using the CEM3340 chip and 47k if using the AS3340 chip. In practice, however, any value from 10-50k should suffice.
 
 
 
-- PCB availability, Gerbers
+</details>
+
+A rendering of the PCB is shown.
+![images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg)
+
+!!! info
+    Certain components can be omitted from the board to remove unused features, if desired.
+
+    === "Base"
+
+        These are required in all configurations. Use only the following components to create a VCO with ramp and sawtooth waveform outputs, one 1v/oct input, and one tune control.
+
+        - J1
+        - U1, U3
+        - R2, R3, R4, R5, R6, R7, R8, R9,R10, R18, R22
+        - C2, C3, C5, C6, C7, C12
+        - RV1, RV4, RV6
+
+        Use a piece of wire to bridge R17.
+    === "Pulse waveform"
+
+        These are required to add a pulse output with pulse width control.
+
+        - R11, R12, R14, R15, R16, R17
+        - RV3
+
+    === "Pulse waveform with PWM CV"
+        These are required to add a pulse output with pulse width control and a pulse width modulation input with attenuator control.
+
+        - R11, R12, R13, R14, R15, R16, R17
+        - RV2, RV3
+    === "Linear FM"
+        The following additional components are required to add a linear FM control voltage input:
+        - R1
+        - C1
+    === "Sync"
+        The following additional components are required to add a hard sync input jack:
+        - C4
+
+
+
+
+
+
+
 - General overview/component type
 - Panel wiring
 - PCB mistakes/modifications
