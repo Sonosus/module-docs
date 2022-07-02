@@ -1,12 +1,15 @@
 # Introduction
 
-This is a small form factor VCO board. It is designed to be modular so it is possible to add or remove certain functions to build a customized module.
+![image7](images/3340breakout-module-01.jpg){ align=right width=300 } 
+
+This project is a small form factor voltage controlled oscillator board. It is designed to be modular, permitting the user to add or remove certain functions to build a customized module.
 It is based around the popular CEM3340 chip. In its fully populated configuration, it has the following features:
 
-- Ramp, triangle, and square waveform outputs.
-- Voltage controlled pulse width modulation for the square waveform output.
-- 1 volt per octave control voltage input.
+- Ramp, triangle, and pulse waveform outputs.
+- Voltage controlled pulse width modulation on the pulse waveform output.
+- 1 volt per octave control input.
 - Linear frequency modulation input.
+- Hard sync input.
 - Accurate tracking over at least 7 octaves.
 
  |      |                          |
@@ -17,7 +20,6 @@ It is based around the popular CEM3340 chip. In its fully populated configuratio
 
 With intermediate soldering and circuit debugging skills, this module can be completed in under 2 hours.
 
-- Images
 
 
 # Design
@@ -30,9 +32,7 @@ The circuit is based around the popular CEM3340 voltage controlled oscillator ch
 
 ### Bill of Materials
 
-A BoM is shown below.
- <details>
-  <summary>Bill of Materials</summary>   
+- add bom
 
 
 Notes:
@@ -47,58 +47,112 @@ Notes:
 
 </details>
 
+### Board rendering
 A rendering of the PCB is shown.
-![images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg)
+![images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg){ width=800 }
 
-!!! info
-    Certain components can be omitted from the board to remove unused features, if desired.
+### Modifications
+This board is designed so that certain components can be omitted from the board to remove unused features, if desired.
 
-    === "Base"
+Base features are always required.
 
-        These are required in all configurations. Use only the following components to create a VCO with ramp and sawtooth waveform outputs, one 1v/oct input, and one tune control.
+=== "Base"
 
-        - J1
-        - U1, U3
-        - R2, R3, R4, R5, R6, R7, R8, R9,R10, R18, R22
-        - C2, C3, C5, C6, C7, C12
-        - RV1, RV4, RV6
+    These are required in all configurations. Use only the following components to create a VCO with ramp and sawtooth waveform outputs, one 1v/oct input, and one tune control.
 
-        Use a piece of wire to bridge R17.
-    === "Pulse waveform"
+    - J1
+    - U1, U3
+    - R2, R3, R4, R5, R6, R7, R8, R9,R10, R18, R22
+    - C2, C3, C5, C6, C7, C12
+    - RV1, RV4, RV6
+    
+    Use a piece of wire to bridge R17 if no pulse wave is to be added.
 
-        These are required to add a pulse output with pulse width control.
+    ![image2](images/3340breakout-pcb-02.jpg){ width=500 }
+=== "Pulse waveform"
 
-        - R11, R12, R14, R15, R16, R17
-        - RV3
+    The following additional components are required to add a pulse output with pulse width control.
 
-    === "Pulse waveform with PWM CV"
-        These are required to add a pulse output with pulse width control and a pulse width modulation input with attenuator control.
+    - R11, R12, R14, R15, R16, R17
+    - RV3
+    
+    ![image3](images/3340breakout-pcb-03.jpg){ width=500 }
 
-        - R11, R12, R13, R14, R15, R16, R17
-        - RV2, RV3
-    === "Linear FM"
-        The following additional components are required to add a linear FM control voltage input:
-        - R1
-        - C1
-    === "Sync"
-        The following additional components are required to add a hard sync input jack:
-        - C4
+=== "Pulse waveform with PWM CV"
+    These are required to add a pulse waveform output with pulse width control and an additional pulse width control voltage input with attenuator.
+
+    - R11, R12, R13, R14, R15, R16, R17
+    - RV2, RV3
+
+    ![image4](images/3340breakout-pcb-04.jpg){ width=500 }
+=== "Linear FM"
+    The following additional components are required to add a linear FM control voltage input:
+    
+    - R1
+    - C1
+
+    ![image5](images/3340breakout-pcb-05.jpg){ width=500 }
+=== "Sync"
+    The following additional components are required to add a hard sync input jack:
+    
+    - C4
+
+    ![image6](images/3340breakout-pcb-06.jpg){ width=500 }
 
 
+### Panel Hardware
 
+The panel components are mounted off board.
 
+The three potentiometers (TUNE, PW, and PW ATT) should be B100k, panel mount. The anticlockwise pin is on the left of each 3 pin header. 
 
+The header J2 is designated for connections to panel jacks. Not all jacks are used depending on the configuration of the board.
 
+|Pin|Silkscreen|Description|
+|---|---|---|
+|1|GND|Ground connection|
+|2|GND|Ground connection|
+|3|SQR|Pulse waveform output|
+|4|SAW|Ramp waveform output|
+|5|TRI|Triangle waveform output|
+|6|PW|Pulse width modulation input|
+|7|SNC|Hard sync input|
+|8|FM|Linear FM input|
+|9|NC|Not connected, empty pin|
+|10|CV|1v/oct note input|
+|11|GND|Ground connection|
+|12|GND|Ground connection|
 
-- General overview/component type
-- Panel wiring
-- PCB mistakes/modifications
-- PCB renderings
+Connect the relevant pin on the header to the tip of the jack.
+The sleeve of each jack should be connected to ground. 
+For this board, the tip/sleeve normal pins are not used and can be left unconnected.
+It is recommended to use 28AWG wire or thicker for board-panel connections.
+
 
 # Testing
-- continuity test
-- chipless power up
-- Calibration
+
+### Testing power integrity
+
+Before the board can be used, it must be tested to ensure correct functionality.
+!!! warning
+    Failure to follow these steps could result in damage to the ICs or your power supply.
+1. Remove the ICs from their sockets if installed.
+2. Check for continuity between the power rails and ground. There should be no connection between +12V, ground, or -12V.
+3. Apply power to the board. With the common probe of your multimeter connected to ground, verify the voltages on the IC sockets.
+
+
+|Chip|Pin|Voltage|
+|---|---|---|
+|CEM3340|16|+12V|
+|CEM3340|3|-6.5V|
+|TL074|4|+12V|
+|TL074|11|-12V|
+
+4. carefully install the CEM3340 and TL074 chips. Verify the notches on the DIP packages match the markings on the silkscreen before applying power to the board.
+
+### Calibrating the module
+
+
 
 # Playing
 - patch notes/audio demos
@@ -106,5 +160,9 @@ A rendering of the PCB is shown.
 - alternative uses
 
 # License
-- CC-BY-SA-4.0
-- OSHWA cert
+
+![OSHWA UK000034](images/3340breakout-cert-01.png)
+
+This project is registered Open Source Hardware.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

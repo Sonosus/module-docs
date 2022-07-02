@@ -22,6 +22,7 @@ theme:
   icon:
     admonition:
       info: octicons/info-16
+      warning: fontawesome/solid/triangle-exclamation
 markdown_extensions:
     - toc:
         permalink: "%"
@@ -32,6 +33,8 @@ markdown_extensions:
         alternate_style: true 
     - admonition
     - pymdownx.details
+    - attr_list
+    - md_in_html
 extra:
     social:
       - icon: fontawesome/brands/github
