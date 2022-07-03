@@ -23,6 +23,7 @@ theme:
     admonition:
       info: octicons/info-16
       warning: fontawesome/solid/triangle-exclamation
+  custom_dir: 'theme'
 markdown_extensions:
     - toc:
         permalink: "%"
@@ -42,3 +43,7 @@ extra:
     analytics:
       provider: google
       property: G-7KP96YZFCX
+extra_javascript:
+    - js/lightimg.js
+extra_css:
+    - stylesheets/lightimg.css

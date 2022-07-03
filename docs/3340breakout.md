@@ -1,6 +1,9 @@
 # Introduction
 
-![image7](images/3340breakout-module-01.jpg){ align=right width=300 } 
+<figure class="inline end" markdown>
+  ![image7](images/3340breakout-module-01.jpg)
+  <figcaption>An assembled 'base' PCB in a 2.5cm Kosmo module</figcaption>
+</figure>
 
 This project is a small form factor voltage controlled oscillator board. It is designed to be modular, permitting the user to add or remove certain functions to build a customized module.
 It is based around the popular CEM3340 chip. In its fully populated configuration, it has the following features:
@@ -30,12 +33,14 @@ The circuit is based around the popular CEM3340 voltage controlled oscillator ch
 
 # Building
 
-### Bill of Materials
+## Bill of Materials
 
-- add bom
+The bill of materials can be found [here](3340breakout-bom.md).
+An interactive bill of materials
 
 
 Notes:
+- Read the Customization section below as some components can be ommitted.
 
 - R6/R7 can be either ferrite beads, 1N5817 diodes, or 10 ohm resistors. If using diodes, ensure the cathode (end with the stripe) is in the hole nearest the + on the silkscreen.
 
@@ -43,21 +48,34 @@ Notes:
 
 - R11 should be 10k if using the CEM3340 chip and 47k if using the AS3340 chip. In practice, however, any value from 10-50k should suffice.
 
+- You will require 2-7 jack sockets depending on your board's configuration.
+
+
 
 
 </details>
 
-### Board rendering
+## Board rendering
 A rendering of the PCB is shown.
-![images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg){ width=800 }
+![!images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg){ width=800 .zoom}
 
-### Modifications
-This board is designed so that certain components can be omitted from the board to remove unused features, if desired.
+[irregularshed](https://lookmumnocomputer.discourse.group/u/irregularshed/summary) has added the missing component values and reference designators from the schematic on this nice annotated image.
 
-Base features are always required.
+
+<figure markdown>
+![image8](images/3340breakout-board-08.png){ width=750 .zoom}
+  <figcaption>Annotated PCB rendering</figcaption>
+</figure>
+
+## Customization
+This board is designed so that certain components can be omitted from the board to remove unused features if desired.
+
+!!! info
+    Base features are always required.
 
 === "Base"
 
+    ![image2](images/3340breakout-pcb-02.jpg){ width=500 align=right .zoom}
     These are required in all configurations. Use only the following components to create a VCO with ramp and sawtooth waveform outputs, one 1v/oct input, and one tune control.
 
     - J1
@@ -68,43 +86,51 @@ Base features are always required.
     
     Use a piece of wire to bridge R17 if no pulse wave is to be added.
 
-    ![image2](images/3340breakout-pcb-02.jpg){ width=500 }
+
 === "Pulse waveform"
 
+    ![image3](images/3340breakout-pcb-03.jpg){ width=500 align=right .zoom}
     The following additional components are required to add a pulse output with pulse width control.
 
     - R11, R12, R14, R15, R16, R17
     - RV3
     
-    ![image3](images/3340breakout-pcb-03.jpg){ width=500 }
+   
 
 === "Pulse waveform with PWM CV"
+    
+    ![image4](images/3340breakout-pcb-04.jpg){ width=500 align=right .zoom}
     These are required to add a pulse waveform output with pulse width control and an additional pulse width control voltage input with attenuator.
 
     - R11, R12, R13, R14, R15, R16, R17
     - RV2, RV3
 
-    ![image4](images/3340breakout-pcb-04.jpg){ width=500 }
+
 === "Linear FM"
+    
+    ![image5](images/3340breakout-pcb-05.jpg){ width=500 align=right .zoom}
     The following additional components are required to add a linear FM control voltage input:
     
     - R1
     - C1
 
-    ![image5](images/3340breakout-pcb-05.jpg){ width=500 }
+
 === "Sync"
+    
+    ![image6](images/3340breakout-pcb-06.jpg){ width=500 align=right .zoom}
+    
     The following additional components are required to add a hard sync input jack:
     
     - C4
 
-    ![image6](images/3340breakout-pcb-06.jpg){ width=500 }
 
 
-### Panel Hardware
+
+## Panel Hardware
 
 The panel components are mounted off board.
 
-The three potentiometers (TUNE, PW, and PW ATT) should be B100k, panel mount. The anticlockwise pin is on the left of each 3 pin header. 
+The three potentiometers (TUNE, PW, and PW ATT) should be affixed to the panel and connected to the board via 3 wires.
 
 The header J2 is designated for connections to panel jacks. Not all jacks are used depending on the configuration of the board.
 
@@ -122,6 +148,10 @@ The header J2 is designated for connections to panel jacks. Not all jacks are us
 |10|CV|1v/oct note input|
 |11|GND|Ground connection|
 |12|GND|Ground connection|
+|~|TUNE|Tuning control|
+|~|PW|Pulse width control|
+|~|PW ATT|Pulse width input attenuator|
+
 
 Connect the relevant pin on the header to the tip of the jack.
 The sleeve of each jack should be connected to ground. 
@@ -131,11 +161,11 @@ It is recommended to use 28AWG wire or thicker for board-panel connections.
 
 # Testing
 
-### Testing power integrity
+## Testing power integrity
 
 Before the board can be used, it must be tested to ensure correct functionality.
 !!! warning
-    Failure to follow these steps could result in damage to the ICs or your power supply.
+    Failure to follow these steps could result in damage to the chips, your power supply, or other modules.
 1. Remove the ICs from their sockets if installed.
 2. Check for continuity between the power rails and ground. There should be no connection between +12V, ground, or -12V.
 3. Apply power to the board. With the common probe of your multimeter connected to ground, verify the voltages on the IC sockets.
@@ -150,14 +180,18 @@ Before the board can be used, it must be tested to ensure correct functionality.
 
 4. carefully install the CEM3340 and TL074 chips. Verify the notches on the DIP packages match the markings on the silkscreen before applying power to the board.
 
-### Calibrating the module
+## Calibrating the module
 
+These steps will ensure the oscillator plays in tune to 1v/octave.
 
+1. Turn the high frequency tracking trimmer (RV6, next to the power header) all the way anticlockwise so its middle pin is measured to be at ground.
+2. Connect a 1v/octave signal source (MIDI-CV converter, arpeggiator, etc) to the CV input jack. Set it to play octave arpeggios (C3, C4, C5, for instance.)
+3. Set the tuning control pot so that the lowest note in the arpeggio is around A3.
+3. Connect a speaker to one of the waveform outputs. Turn the 1v/oct tracking trimmer (RV1) until the oscillator is playing octaves in tune. Ideally this should be measured with a digital tuner.
+4. Turn the tuning pot so the lowest note in the sequence is around an A6. Turn the high frequency trimmer so the octaves are in tune as before.
 
-# Playing
-- patch notes/audio demos
-- patch ideas
-- alternative uses
+Your board should now be ready to be installed behind a panel or in an enclosure. 
+
 
 # License
 
