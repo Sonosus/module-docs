@@ -163,22 +163,25 @@ It is recommended to use 28AWG wire or thicker for board-panel connections.
 
 ## Testing power integrity
 
+
+
 Before the board can be used, it must be tested to ensure correct functionality.
 !!! warning
     Failure to follow these steps could result in damage to the chips, your power supply, or other modules.
-1. Remove the ICs from their sockets if installed.
-2. Check for continuity between the power rails and ground. There should be no connection between +12V, ground, or -12V.
-3. Apply power to the board. With the common probe of your multimeter connected to ground, verify the voltages on the IC sockets.
+1.  Remove the ICs from their sockets if installed.
+2.  Check for continuity between the power rails and ground. There should be no connection between +12V, ground, or -12V.
+3.  Apply power to the board. With the common probe of your multimeter connected to ground, verify the voltages on the IC sockets. 
+    
+    ??? error "Expected voltages"
+        |Chip|Pin|Voltage|
+        |---|---|---|
+        |CEM3340|16|+12V|
+        |CEM3340|3|-6.5V|
+        |TL074|4|+12V|
+        |TL074|11|-12V|
 
+4. Carefully install the CEM3340 and TL074 chips. Verify the notches on the DIP packages match the markings on the silkscreen before applying power to the board.
 
-|Chip|Pin|Voltage|
-|---|---|---|
-|CEM3340|16|+12V|
-|CEM3340|3|-6.5V|
-|TL074|4|+12V|
-|TL074|11|-12V|
-
-4. carefully install the CEM3340 and TL074 chips. Verify the notches on the DIP packages match the markings on the silkscreen before applying power to the board.
 
 ## Calibrating the module
 
