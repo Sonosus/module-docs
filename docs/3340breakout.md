@@ -28,18 +28,19 @@ With intermediate soldering and circuit debugging skills, this module can be com
 # Design
 
 The circuit is based around the popular CEM3340 voltage controlled oscillator chip. It is also compatible with the AS3340 and V3340 chip. It has two trimmer potentiometers for adjusting the 1v/octave tracking. All waveform outputs are buffered via the TL074 quad op amp chip. A full schematic is shown below.
-
-![images/3340breakout-sch-01.jpg](images/3340breakout-sch-01.jpg)
+<figure markdown>
+![images/3340breakout-sch-01.jpg](images/3340breakout-sch-01.jpg){ width=600 .zoom}
+<figcaption>Schematic layout of the project</figcaption>
+</figure>
 
 # Building
 
 ## Bill of Materials
 
 The bill of materials can be found [here](3340breakout-bom.md).
-An interactive bill of materials
-
 
 Notes:
+
 - Read the Customization section below as some components can be ommitted.
 
 - R6/R7 can be either ferrite beads, 1N5817 diodes, or 10 ohm resistors. If using diodes, ensure the cathode (end with the stripe) is in the hole nearest the + on the silkscreen.
@@ -57,7 +58,11 @@ Notes:
 
 ## Board rendering
 A rendering of the PCB is shown.
-![!images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg){ width=800 .zoom}
+
+<figure markdown>
+![images/3340breakout-pcb-01.jpg](images/3340breakout-pcb-01.jpg){ width=800 .zoom }
+<figcaption>Rendering of the PCB</figcaption>
+</figure>
 
 [irregularshed](https://lookmumnocomputer.discourse.group/u/irregularshed/summary) has added the missing component values and reference designators from the schematic on this nice annotated image.
 
