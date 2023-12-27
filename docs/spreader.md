@@ -3,8 +3,8 @@
 This is a CV-controlled 'spread' module for providing evenly offset control voltages, perfect for detuning oscillators or equally varying filter cutoffs.
 
 It takes a CV input. A 'spread' value is then:
-- added to the CV input and sent to the + output
-- subtracted from the CV input and sent to the - output
+* added to the CV input and sent to the + output
+* subtracted from the CV input and sent to the - output
 The CV input is also buffered and sent to the Buffer output.
 
 The spread value is determined by adding together the value of the Spread knob (ranging from 0 to 12V) and the value of the Spread CV input (attenuated by the CV ATT knob).
@@ -38,11 +38,11 @@ The bill of materials is shown below.
 Note: the capacitors are optional but recommended to ensure module stability.
 Other components you will require for a full build:
 
-- 2 IC sockets (DIP8 and DIP14, highly recommended)
-- 1 panel/PCB set
-- 2 knobs (any will suffice, I 3D print them)
-- 1 Kosmo power cable
-- 4 suitable wood/machine screws for mounting the module in your case
+* 2 IC sockets (DIP8 and DIP14, highly recommended)
+* 1 panel/PCB set
+* 2 knobs (any will suffice, I 3D print them)
+* 1 Kosmo power cable
+* 4 suitable wood/machine screws for mounting the module in your case
 
 ### PCB
 The latest PCB/panel Gerber files are available on [GitHub](github.com/sonosus/kosmicsuperspreader/releases/latest) for download.
@@ -51,10 +51,10 @@ I may also have some PCBs available for you to purchase for a competitive price 
 ### Resistor Matching
 For accurate 1v/oct tracking, it is desirable to match certain sets of resistors as closely as your ohmmeter allows. These are:
 
-- R4, R5, R10
-- R11, R12
-- R6, R8
-- R7, R9
+* R4, R5, R10
+* R11, R12
+* R6, R8
+* R7, R9
 
 
 ## Main board
@@ -72,11 +72,11 @@ The square pads on the PCB are for the signal connection and the round pads are 
 
 Solder wires from the square pins on the board to the tip of the corresponding jack socket:
 
--  + on PCB to + jack
--  - on PCB to - jack
-- SPREAD on PCB to CV jack
-- IN on PCB to IN jack
-- BUFFER on PCB to BUFFER jack.
+*  + on PCB to + jack
+*  - on PCB to - jack
+* SPREAD on PCB to CV jack
+* IN on PCB to IN jack
+* BUFFER on PCB to BUFFER jack.
 
 
 
