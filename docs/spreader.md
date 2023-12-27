@@ -2,10 +2,10 @@
 
 This is a CV-controlled 'spread' module for providing evenly offset control voltages, perfect for detuning oscillators or equally varying filter cutoffs.
 
-It takes a CV input. A 'spread' value is then:
+The module takes a CV input. A 'spread' value is then:
 
-* added to the CV input and sent to the + output
-* subtracted from the CV input and sent to the - output
+* added to the CV input and sent to the \+ output
+* subtracted from the CV input and sent to the \- output
 
 The CV input is also buffered and sent to the Buffer output.
 
